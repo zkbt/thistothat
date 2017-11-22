@@ -3,14 +3,14 @@ There are a bunch of empirical or modeled relations between various quantities f
 
 
 ### Installation
-To install, feel free to fork/clone this repository and install it into you local Python library via the command (from the main `thistothat/` repository directory):
-```
-python setup.py install
-```
-
-You should also be able to install it directly via `pip` from any UNIX prompt:
+To install, this simplest way is probably simply to install it directly via `pip` from any UNIX prompt:
 ```
 pip install git+https://github.com/zkbt/thistothat
+```
+
+If you want to be able to modify the code youself, please also feel free to fork/clone this repository and install it into you local Python library via the command (from the main `thistothat/` repository directory):
+```
+python setup.py install
 ```
 
 
@@ -30,4 +30,4 @@ plt.xlabel('$V-I_c$'); plt.ylabel("Temperature (K)");
 ```
 
 ### Authors
-This wrapper was make by [Zach Berta-Thompson](http://casa.colorado.edu/~bertathompson/). The individual relations are drawn from the literature. If you use a particular relation, please be sure to cite the original reference for it, as indicated by the `.bibcode` attribute of that relation object.
+This wrapper was made by [Zach Berta-Thompson](http://casa.colorado.edu/~bertathompson/). The individual relations are drawn from the literature. If you use a particular relation, please be sure to cite the original reference for it, as indicated by the `.bibcode` attribute of that relation object.
