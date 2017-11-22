@@ -3,17 +3,15 @@ There are a bunch of empirical or modeled relations between various quantities f
 
 
 ### Installation
-To install, feel free to fork/clone this repository and install it into you local Python library via the command
+To install, feel free to fork/clone this repository and install it into you local Python library via the command (from the main `thistothat/` repository directory):
 ```
 python setup.py install
 ```
-from the main `thistothat/` repository directory.
 
-You should also be able to install it directly via `pip` with
+You should also be able to install it directly via `pip` from any UNIX prompt:
 ```
 pip install git+https://github.com/zkbt/thistothat
 ```
-from any UNIX prompt.
 
 
 ### Usage
