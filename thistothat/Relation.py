@@ -77,7 +77,13 @@ class Relation(Talker):
         '''
         return np.nanmin(self.table[key]), np.nanmax(self.table[key])
 
+
+    def describe(self, key):
+        '''Describe one column in the table.'''
+        self.speak('{} = {}'.format(key, self.descriptions[key]))
+
     def summarize(self):
+        '''Summarize all the possible columns in the table.'''
         self.speak('')
         self.speak('The columns in {} are:'.format(self.name))
         for key in self.possible:
