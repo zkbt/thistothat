@@ -26,7 +26,8 @@ temperature = m.tofrom('Teff')('V-Ic')
 vminusi = np.linspace(-1,5)
 
 plt.plot(vminusi, temperature(vminusi))
-plt.xlabel('$V-I_c$'); plt.ylabel("Temperature (K)");
+plt.xlabel('$V-I_c$'); plt.ylabel("Temperature (K)")
+plt.show();
 ```
 
 ### Authors
