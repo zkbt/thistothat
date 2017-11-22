@@ -15,7 +15,7 @@ python setup.py install
 
 
 ### Usage
-For a slightly more detailed example, check out the `jupyter` notebooks in the `notebooks/` folder. Here's a quick preview:
+For a slightly more detailed example, check out the `jupyter` notebook in the `notebooks/` folder. Here's a quick preview:
 
 ```
 import matplotlib.pyplot as plt, numpy as np
