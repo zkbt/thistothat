@@ -126,7 +126,9 @@ class Relation(Talker):
             self.warning("it seems like the attempted output key {0} isn't valid".format(outkey))
             return None
 
-        return scipy.interpolate.interp1d(x, y, bounds_error=False, fill_value=np.nan)
+        # make sure to include only finite x-values
+        ok = np.isfinite(x)
+        return scipy.interpolate.interp1d(x[ok], y[ok], bounds_error=False, fill_value=np.nan)
 
     def plotone(self, inkey, outkey):
         '''

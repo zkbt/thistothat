@@ -27,10 +27,13 @@ class Mamajek(Relation):
             '#SpT':'Another copy of the spectral type'
         }
 
+        # create some additional color combinations that might be nice
+        self.table['V-J'] = self.table['V-Ks'] - self.table['H-K'] - self.table['J-H']
+
         # all the colors are the same text, so set them automatically
         for k in self.possible:
             if '-' in k:
-                self.description[k] = '{} color'.format(k)
+                self.descriptions[k] = '{} color'.format(k)
 def test():
     stars = Mamajek()
     stars.plot()
