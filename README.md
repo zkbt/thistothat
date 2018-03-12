@@ -8,10 +8,13 @@ To install, this simplest way is probably simply to install it directly via `pip
 pip install git+https://github.com/zkbt/thistothat
 ```
 
-If you want to be able to modify the code youself, please also feel free to fork/clone this repository and install it into you local Python library via the command (from the main `thistothat/` repository directory):
+If you want to be able to modify the code yourself, please also feel free to fork/clone this repository onto your own computer and install directly from that editable package. For example, this might look like:
 ```
-python setup.py install
+git clone https://github.com/zkbt/thistothat.git
+cd thistothat/
+pip install -e .
 ```
+This will link the installed version of the `thistothat` package to your local repository. Changes you make to the code in the repository should be reflected in the version Python sees when it tries to `import thistothat`.
 
 
 ### Usage

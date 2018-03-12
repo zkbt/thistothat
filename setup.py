@@ -33,7 +33,7 @@ setup(name = "thistothat",
       'Programming Language :: Python',
       'Topic :: Scientific/Engineering :: Astronomy'
       ],
-    install_requires=['numpy', 'astropy', 'scipy', 'matplotlib'],
+    install_requires=['numpy', 'astropy', 'scipy', 'matplotlib' ],
     zip_safe=False,
     license='MIT',
 

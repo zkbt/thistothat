@@ -36,7 +36,7 @@ class Baraffe(Relation):
             'age':'Absolute M magnitude (Johnson-Glass).'
         }
 
-        self.summarize()
+        #self.summarize()
 
 
     def load(self):
