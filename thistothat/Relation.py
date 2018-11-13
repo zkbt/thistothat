@@ -29,7 +29,7 @@ class Relation(Talker):
         '''
 
         # decide if it should be chatty
-        Talker.__init__(self, **kwargs)
+        Talker.__init__(self)
 
         # make sure the basic settings are included
         self.name = 'Some General Relation'
@@ -39,10 +39,10 @@ class Relation(Talker):
         self.filename = filename
 
         # load the data table
-        self.load()
+        self.load(**kwargs)
 
 
-    def load(self):
+    def load(self, **kwargs):
         '''
         Load the data table, and store it internally to this object.
         '''
@@ -53,7 +53,7 @@ class Relation(Talker):
         self.speak('loading data from {0}'.format(path))
 
         # load as an astropy table
-        self.table = astropy.io.ascii.read(path, fill_values=[('...', np.nan)] )
+        self.table = astropy.io.ascii.read(path, fill_values=[('...', np.nan)], **kwargs)
 
         # give an update
         self.speak('   ...success!')

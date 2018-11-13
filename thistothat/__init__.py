@@ -13,6 +13,7 @@ if not __THISTOTHAT_SETUP__:
     from .Covey import Covey
     from .Davenport import Davenport
     from .Baraffe import Baraffe
+    from .Parsec import PARSEC
 
     def available():
         print('The variables defined in `thistothat` include:')
