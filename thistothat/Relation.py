@@ -68,7 +68,7 @@ class Relation(Talker):
             return self.columns
         except AttributeError:
             # otherwise, use all the columns in the table
-            return self.table.colnames
+            return self.table.keys()
 
     def limits(self, key):
         '''

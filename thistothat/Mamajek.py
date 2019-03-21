@@ -1,14 +1,15 @@
 from .Relation import *
+import pandas as pd
 
 class Mamajek(Relation):
     '''Eric Mamajek's relations for stars, linking spectral type, effective temperature, bolometric corrections, colors, abosolute magnitudes, luminosities, and mass,'''
     def __init__(self, filename='data/mamajek_dwarfproperties.txt'):
         Relation.__init__(self, filename)
-        self.table = self.table[np.argsort(self.table['Teff'])]
+        #self.table = self.table[np.argsort(self.table['Teff'])]
 
         # add some details
         self.name="TheMamajekCuratedStars"
-        self.bibcode='2013ApJS..208....9P'
+        self.bibcode='2013ApJS..208...9P'
 
         # describe the columns in the relation
         self.descriptions = {
@@ -28,12 +29,28 @@ class Mamajek(Relation):
         }
 
         # create some additional color combinations that might be nice
-        self.table['V-J'] = self.table['V-Ks'] - self.table['H-K'] - self.table['J-H']
+        self.table['V-J'] = self.table['V-Ks'] - self.table['H-Ks'] - self.table['J-H']
 
         # all the colors are the same text, so set them automatically
         for k in self.possible:
             if '-' in k:
                 self.descriptions[k] = '{} color'.format(k)
+    def load(self, **kwargs):
+        '''
+        Load the data table, and store it internally to this object.
+        '''
+
+        # figure out the path to the data file, relative to this package
+        #path = os.path.dirname(__file__) + '/'+ self.filename
+        path = pkg_resources.resource_filename(__name__, self.filename)
+        self.speak('loading data from {0}'.format(path))
+
+        # load as an astropy table
+        self.table = pd.read_csv(path, sep='\s+', comment='#')
+
+        # give an update
+        self.speak('   ...success!')
+
 def test():
     stars = Mamajek()
     stars.plot()
